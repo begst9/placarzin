@@ -1,0 +1,21 @@
+.finalizar {
+  display: flex;
+  justify-content: center;  
+  margin-top: 50px;       
+}
+
+.checar-btn {
+  padding: 15px 30px;      
+  font-size: 18px;         
+}
+
+.resetar {
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;        
+}
+
+.voltar-btn {
+  padding: 15px 30px;      
+  font-size: 18px;         
+}

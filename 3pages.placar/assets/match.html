@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placarzin Online</title>
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkin.html">
+    <link rel="stylesheet" href="checkout.html">
+</head>
+
+<body style="background-color: rgb(199, 6, 38);">
+   
+  <div style="display: flex; justify-content: center; gap: 500px; text-align: center; font-family: Italic, sans-serif; font-size: 100px; font-weight: bold; margin-bottom: 10px;">
+    <div id="vNome1">Jogador 1</div>
+    <div id="vNome2">Jogador 2</div>
+  </div>
+
+    <div class="finalizar">
+   <form action="checkout.html" >  
+     <div style="display: flex; justify-content: center; align-items: center; gap: 300px; width: 100%;">
+       <input id="numeroplacar1" name="pontos1" type="number" min="0" max="1000" placeholder="0" style="text-align: center; font-family: sans-serif; font-style: italic; font-size: 100px; font-weight: bold;">
+       <input id="numeroplacar2" name="pontos2" class="placar" type="number" min="0" max="1000" placeholder="0" style="text-align: center; font-family: sans-serif; font-style: italic; font-size: 100px; font-weight: bold;">
+     </div>
+     <input type="hidden" name="nomejogador1" id="hiddenNome1">
+     <input type="hidden" name="nomejogador2" id="hiddenNome2">
+
+     <div class="finalizar">
+     <p> <button id="checar-btn" type="submit" class="checar-btn">Finalizar</button> </p>
+    </div>
+   </form>
+</div>
+
+
+   <script>
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('nomejogador1')) document.getElementById('vNome1').innerText = params.get('nomejogador1');
+    if(params.get('nomejogador2')) document.getElementById('vNome2').innerText = params.get('nomejogador2');
+    document.getElementById('hiddenNome1').value = params.get('nomejogador1');
+    document.getElementById('hiddenNome2').value = params.get('nomejogador2');
+  </script>
+     
+</body>
+</html>

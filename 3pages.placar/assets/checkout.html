@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placarzin Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkin.html">
+    <link rel="stylesheet" href="match.html">
+</head>
+<body style="background-color: rgb(199, 6, 38);">
+
+ <div style="display: flex; justify-content: center; font-size: 80px; font-weight: bold; font-family: sans-serif; color: white; margin-top: 50px;">
+    Campeão: <span id="nomeCampeao"></span>
+ </div>
+
+
+ <script>
+    const params = new URLSearchParams(window.location.search);
+    const p1 = parseInt(params.get('pontos1')) || 0;
+    const p2 = parseInt(params.get('pontos2')) || 0;
+    const n1 = params.get('nomejogador1') || 'Jogador 1';
+    const n2 = params.get('nomejogador2') || 'Jogador 2';
+
+    if (p1 > p2) {
+        document.getElementById('nomeCampeao').innerText = n1;
+    } else if (p2 > p1) {
+        document.getElementById('nomeCampeao').innerText = n2;
+    } else {
+        document.getElementById('nomeCampeao').innerText = "Empate!";
+    }
+ </script>
+
+    <form  class="resetar"           action="checkin.html">
+  <button id="voltar-btn" type="submit">Novo Jogo</button>
+</form>
+
+
+
+</body>
+</html>
